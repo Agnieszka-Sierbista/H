@@ -1,0 +1,63 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+
+  @include mixins.respond-to(x-large) {
+    flex-direction: row;
+  }
+
+  &__left, &__right {
+    display: flex;
+    flex: 1 0 50%;
+  }
+
+  &__left {
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    @include mixins.respond-to(small) {
+      padding: variables.$size-s;
+    }
+
+    @include mixins.respond-to(x-large) {
+      padding: 0 100px 100px 0;
+    }
+  }
+
+  &__partners {
+    @include mixins.centered-flex;
+    width: 100%;
+    flex-direction: column;
+
+    @include mixins.respond-to(small) {
+      flex-direction: row;
+      gap: variables.$size-m;
+    }
+
+  }
+
+  &__partners-picture {
+    padding-top: variables.$size-tiny;
+    height: 10rem;
+    align-self: center;
+    animation: hop 5s ease-out;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 0.9s;
+      }
+    }
+
+    @include mixins.respond-to(small) {
+      height: 8.4rem;
+      align-self: initial;
+    }
+  }
+}

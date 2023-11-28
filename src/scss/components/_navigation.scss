@@ -1,0 +1,134 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+
+  &__wrapper {
+    padding: variables.$size-s;
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    @include mixins.respond-to(small) {
+      backdrop-filter: blur(5px);
+    }
+
+    @include mixins.respond-to(medium) {
+      padding: variables.$size-m variables.$size-xl variables.$size-s;
+    }
+
+    @include mixins.respond-to(x-large) {
+      backdrop-filter: none;
+    }
+  }
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &__nav {
+    transition: 1s;
+  }
+
+  &__logo {
+    height: 3.6rem;
+    align-self: center;
+  }
+
+  &__toggle-button {
+    position: absolute;
+    top: variables.$size-s;
+    right: variables.$size-s;
+    display: block;
+    height: 2.4rem;
+    width: 2.4rem;
+    color: inherit;
+    z-index: map-get(variables.$z-indexes, "onTop");
+
+    @include mixins.respond-to(small) {
+      display: none;
+    }
+  }
+
+  &__list {
+    //drawer
+    margin: 0;
+    height: 100%;
+    width: 45%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: map-get(variables.$z-indexes, "almostTheTop");
+    top: 0;
+    right: 0;
+    background-color: variables.$color-primary;
+    padding: 60px variables.$size-tiny variables.$size-tiny variables.$size-tiny;
+    gap: variables.$size-m;
+
+    @include mixins.respond-to(small) {
+      position: static;
+      width: 100%;
+      flex-direction: row;
+      align-items: baseline;
+      gap: variables.$size-s;
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  &__item {
+    padding-top: 12.4rem;
+    align-self: center;
+    @include mixins.respond-to(small) {
+      padding-top: 0;
+      width: 100%;
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+    z-index: map-get(variables.$z-indexes, "onTop");
+  }
+
+  &__dropdown-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: variables.$size-xs;
+    padding: variables.$size-m 0 0 0;
+    border: 1px solid variables.$color-white;
+    color: variables.$color-white;
+    z-index: map-get(variables.$z-indexes, "hideUnder");
+
+    @include mixins.respond-to(small) {
+      border: 1px solid variables.$color-primary-dark;
+      color: variables.$color-primary-dark;
+      background: variables.$color-white;
+    }
+
+    @include mixins.respond-to(x-large) {
+      border-color: variables.$color-white;
+      color: variables.$color-white;
+      backdrop-filter: none;
+      background-color: rgba(variables.$color-white, 0.4);
+    }
+  }
+
+  &__dropdown-content-pill {
+    padding: variables.$size-tiny variables.$size-s;
+    border-radius: variables.$border-radius-round;
+
+    &:hover {
+      background-color: variables.$color-primary-light;
+    }
+  }
+}

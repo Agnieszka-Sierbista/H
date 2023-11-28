@@ -1,0 +1,43 @@
+@use "../abstracts/variables";
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%; // 10px
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: variables.$color-white;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+
+button {
+  border: unset;
+  background-color: unset;
+  padding: 0;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}

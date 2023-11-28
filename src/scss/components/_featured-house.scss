@@ -1,0 +1,151 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.featured-house {
+
+  &__filters {
+    @include mixins.centered-flex;
+    gap: variables.$size-s;
+  }
+
+  &__filter {
+    @include mixins.centered-flex;
+    padding: variables.$size-xxs;
+    flex-direction: row;
+    gap: variables.$size-tiny;
+  }
+
+  &__filter-text {
+    display: none;
+
+    @include mixins.respond-to(small) {
+      display: initial;
+      color: variables.$color-primary-dark;
+    }
+
+    &--active {
+      color: variables.$color-primary;
+    }
+  }
+
+  &__btn {
+    padding: variables.$size-xxs;
+    display: flex;
+    align-items: center;
+
+    &:active {
+      background-color: variables.$color-primary;
+
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(0%) hue-rotate(335deg) brightness(106%) contrast(106%);
+      }
+    }
+  }
+
+  &__arrows {
+    display: none;
+    justify-content: center;
+    gap: variables.$size-tiny;
+    position: absolute;
+    right: -4rem;
+    bottom: 0;
+
+    @include mixins.respond-to(small) {
+      display: flex;
+      position: initial;
+      align-items: center;
+      gap: variables.$size-xs;
+    }
+  }
+
+  &__arrow {
+    height: variables.$size-s;
+    width: variables.$size-s;
+  }
+
+  &__cards {
+    padding: 4rem 0 12rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: variables.$size-xl;
+    transition: all 0.2s;
+
+    @include mixins.respond-to(small) {
+      align-items: stretch;
+      justify-content: stretch;
+      flex-direction: row;
+      gap: variables.$size-m;
+
+    }
+  }
+
+  &__cards-container {
+    user-select: none;
+  }
+
+  &__card {
+    flex: 1 1 29%;
+
+    @include mixins.respond-to(small) {
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 29%;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+  }
+
+  &__card-img {
+    width: 100%;
+    min-width: 37.5rem;
+    min-height: 37.5rem;
+    max-width: 37.5rem;
+    max-height: 37.5rem;
+    object-position: center;
+    border-radius: 20px;
+    pointer-events: none;
+
+    @include mixins.respond-to(small) {
+      min-height: unset;
+      max-width: unset;
+      min-width: 25vw;
+      max-height: 25vw;
+    }
+  }
+
+  &__card-picture {
+    position: relative;
+
+  }
+
+  &__card-badge {
+    display: flex;
+    align-items: center;
+    gap: variables.$size-tiny;
+    padding: variables.$size-tiny variables.$size-xs;
+    border-radius: variables.$size-m;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: variables.$color-primary-light;
+    color: variables.$color-primary-dark;
+
+    &--info {
+      background-color: variables.$color-info-light;
+      color: variables.$color-info;
+    }
+
+    &--danger {
+      background-color: variables.$color-danger-light;
+      color: variables.$color-danger;
+    }
+  }
+
+  &__agent {
+    display: flex;
+    flex-direction: row;
+    gap: variables.$size-m;
+  }
+}

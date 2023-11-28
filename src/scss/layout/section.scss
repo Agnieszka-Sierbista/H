@@ -1,0 +1,55 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.section {
+  &__header {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include mixins.respond-to(small) {
+      flex-direction: row;
+      gap: variables.$size-s;
+    }
+  }
+
+  &__beginning {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: variables.$size-xxs;
+
+    @include mixins.respond-to(small) {
+      align-items: initial;
+    }
+  }
+
+  &__starter {
+    position: initial;
+
+    @include mixins.respond-to(small) {
+      position: absolute;
+      left: -4rem;
+      top: 0.5rem;
+      width: 3.2rem;
+    }
+  }
+
+  &__heading {
+    font-size: variables.$size-m;
+    font-weight: 600;
+    margin: 0 0 variables.$size-s 0;
+
+    @include mixins.respond-to(small) {
+      margin: 0;
+    }
+  }
+
+  &__starter-heading {
+    color: variables.$color-secondary;
+    font-weight: 400;
+    margin: 0;
+  }
+}

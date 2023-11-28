@@ -1,0 +1,43 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.u-container {
+  padding: variables.$size-s variables.$size-l variables.$size-l;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.respond-to(medium) {
+    padding: variables.$size-m variables.$size-xl variables.$size-xl;
+  }
+}
+
+.u-hide {
+  display: none;
+}
+
+.u-turn-over {
+  transform: rotate(180deg);
+}
+
+.chevron--expand {
+  @include mixins.respond-to(small) {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(99%) saturate(398%) hue-rotate(109deg) brightness(97%) contrast(92%);
+  }
+  @include mixins.respond-to(x-large) {
+    filter: none;
+  }
+}
+
+.u-scale {
+  transform: scale(1.2);
+  box-shadow: 16px 24px 52px -8px rgba(0, 0, 0, 0.15);;
+}
+
+.u-grab {
+  cursor: grab;
+}
+
+.u-grabbing {
+  cursor: grabbing;
+}

@@ -1,0 +1,84 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.search-form {
+  display: inline;
+  position: relative;
+  align-self: stretch;
+
+  &__input-wrapper {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+  }
+
+  &__input {
+    width: 100%;
+    margin: variables.$size-m 0;
+    padding: variables.$size-s variables.$size-s variables.$size-s variables.$size-l;
+    border-radius: 2.8rem;
+    border: 1px solid variables.$color-grey-1;
+    background: variables.$color-white url('../assets/icons/pin.svg') variables.$size-xxs no-repeat;
+
+    @include mixins.respond-to(small) {
+      padding: variables.$size-s variables.$size-s variables.$size-s 5.6rem;
+      background-position: variables.$size-s;
+    }
+  }
+
+  &__label {
+    color: variables.$color-grey-3;
+    position: absolute;
+    font-size: variables.$size-xxs;
+    font-weight: 300;
+    top: 1rem;
+    left: 5rem;
+    transition: transform .3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4rem);
+  }
+
+  &__error {
+    color: variables.$color-danger;
+    position: absolute;
+    font-size: variables.$size-xs;
+    font-weight: 300;
+    top: 10rem;
+    left: 5rem;
+    transition: transform .3s;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    font-weight: 600;
+    gap: variables.$size-tiny;
+    padding: variables.$size-xxs;
+    animation: pulse 2s;
+    animation-delay: 3s;
+    border-radius: 2.8rem;
+
+    @include mixins.respond-to(small) {
+      padding: 1.7rem 4.4rem;
+    }
+  }
+
+  &__btn-text {
+    display: none;
+    @include mixins.respond-to(small) {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      display: block;
+    }
+  }
+}

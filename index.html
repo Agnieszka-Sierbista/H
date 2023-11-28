@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hounter</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" defer src="src/js/index.js"></script>
+  </head>
+  <body>
+    <header class="nav-bar">
+      <div class="nav-bar__wrapper">
+        <div class="navigation">
+          <a href="#" class="navigation__home">
+            <img src="assets/icons/Logo.svg" alt="Hounter logo" class="navigation__logo" />
+          </a>
+          <button class="navigation__toggle-button">
+            <img src="assets/icons/hamburger.svg" alt="menu toggle" class="navigation__button-icon" />
+          </button>
+          <nav class="navigation__nav u-hide">
+            <ul class="navigation__list">
+              <li class="navigation__pill">
+                <a href="#about" class="btn-menu">About</a>
+              </li>
+              <li class="navigation__pill">
+                <a href="#articles" class="btn-menu">Article</a>
+              </li>
+              <li class="navigation__pill">
+                <div class="navigation__dropdown">
+                  <button class="btn-menu navigation__dropdown--btn">
+                    Property
+                    <img
+                      src="assets/icons/expand.svg"
+                      alt="An arrow to expand a dropdown menu"
+                      class="chevron--expand"
+                    />
+                  </button>
+                  <ul class="navigation__dropdown-content u-hide">
+                    <li class="navigation__dropdown-content-pill">
+                      <a href="#" class="navigation__link--dropdown">Houses</a>
+                    </li>
+                    <li class="navigation__dropdown-content-pill">
+                      <a href="#" class="navigation__link--dropdown">Apartments</a>
+                    </li>
+                    <li class="navigation__dropdown-content-pill">
+                      <a href="#" class="navigation__link--dropdown">Plots</a>
+                    </li>
+                    <li class="navigation__dropdown-content-pill">
+                      <a href="#" class="navigation__link--dropdown">Trailers</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="navigation__item">
+                <a href="#form" class="btn btn__outlined btn__outlined--light">Sign Up</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-hero">
+        <div class="u-container">
+          <header class="hero">
+            <div class="hero__left">
+              <h1 class="heading-primary">
+                find the place to live <span class="heading-primary heading-primary--green">your dreams</span> easily
+                here
+              </h1>
+              <p class="body-text-grey-3">
+                Everything you need about finding your place to live will be here, where it will be easier for you
+              </p>
+              <form class="search-form">
+                <div class="search-form__input-wrapper">
+                  <input
+                    type="text"
+                    class="search-form__input"
+                    id="location"
+                    minlength="3"
+                    placeholder="Your favourite location..."
+                    data-placeholder-short="Your favourite location..."
+                    data-placeholder-long="Search for the location you want!"
+                  />
+                  <label class="search-form__label" for="location">Search for the location you want!</label>
+                  <div class="search-form__error">Type at least 3 letters!</div>
+                  <button class="btn btn__filled--primary search-form__btn">
+                    <span class="search-form__btn-text">Search</span>
+                    <img src="assets/icons/arrow-r-white.svg" alt="expand" class="arrow-r" />
+                  </button>
+                </div>
+              </form>
+              <p class="body-text-grey-3">Our Partnership</p>
+              <div class="hero__partners">
+                <img src="assets/icons/traveloka_logo1.svg" alt="Partners logos" class="hero__partners-picture" />
+                <img src="assets/icons/traveloka_logo2.svg" alt="Partners logos" class="hero__partners-picture" />
+                <img src="assets/icons/traveloka_logo3.svg" alt="Partners logos" class="hero__partners-picture" />
+                <img src="assets/icons/traveloka_logo4.svg" alt="Partners logos" class="hero__partners-picture" />
+              </div>
+            </div>
+            <div class="hero__right">
+              <div class="recommended">
+                <div class="recommended__arrows">
+                  <div id="recommended-arrow-left" class="recommended__arrow-container">
+                    <img src="assets/icons/arrow-l.svg" alt="arrow left" class="recommended__arrow-left" />
+                  </div>
+                  <div id="recommended-arrow-right" class="recommended__arrow-container">
+                    <img src="assets/icons/arrow-r.svg" alt="arrow right" class="recommended__arrow-right" />
+                  </div>
+                </div>
+                <div class="recommended__carousel">
+                  <button class="recommended__item">
+                    <span class="recommended__pictures">
+                      <img src="assets/people/person1.jpeg" alt="Person 1" class="recommended__picture" />
+                      <img src="assets/people/person2.jpeg" alt="Person 2" class="recommended__picture" />
+                      <img src="assets/people/jenny.jpeg" alt="Person 3" class="recommended__picture" />
+                    </span>
+                    <span class="recommended__content">
+                      <p class="recommended__content--main">1K+ People</p>
+                      <p class="recommended__content--sub">Successfully Getting Home</p>
+                    </span>
+                  </button>
+
+                  <button class="recommended__item">
+                    <span class="recommended__pictures">
+                      <img src="assets/houses/house1-small.png" alt="Recommended house" class="recommended__picture" />
+                    </span>
+                    <span class="recommended__content">
+                      <p class="recommended__content--main">56 Houses</p>
+                      <p class="recommended__content--sub">Sold Monthly</p>
+                    </span>
+                  </button>
+
+                  <button class="recommended__item">
+                    <span class="recommended__pictures">
+                      <img src="assets/people/person4.jpeg" alt="Person 4" class="recommended__picture" />
+                    </span>
+                    <span class="recommended__content">
+                      <p class="recommended__content--main">4K+ People</p>
+                      <p class="recommended__content--sub">People Looking for New Homes</p>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+      </section>
+
+      <section class="section-featured-house">
+        <div class="u-container">
+          <header class="section__header">
+            <div class="section__beginning">
+              <img
+                src="./assets/section-starter.svg"
+                alt="A yellow line marking start of a new section"
+                class="section__starter"
+              />
+              <h4 class="section__starter-heading">Our recommendation</h4>
+              <h2 class="section__heading">Featured House</h2>
+            </div>
+            <div class="featured-house__filters">
+              <button class="btn btn__filled--light featured-house__filter">
+                <img src="./assets/icons/house-primary.svg" alt="House icon" class="featured-house__icon" />
+                <span class="featured-house__filter-text featured-house__filter-text--active">House</span>
+              </button>
+              <button class="btn btn__outlined btn__outlined--white featured-house__filter">
+                <img src="assets/icons/villa-primary-dark.svg" alt="Villa icon" class="featured-house__icon" />
+                <span class="featured-house__filter-text">Villa</span>
+              </button>
+              <button class="btn btn__outlined btn__outlined--white featured-house__filter">
+                <img src="assets/icons/apartment-primary.svg" alt="Apartment icon" class="featured-house__icon" />
+                <span class="featured-house__filter-text">Apartment</span>
+              </button>
+            </div>
+            <div class="featured-house__arrows">
+              <button class="btn btn__outlined-primary featured-house__btn featured-house__btn-left">
+                <img
+                  class="featured-house__arrow featured-house__arrow--left"
+                  src="./assets/icons/arrow-l-primary.svg"
+                  alt="Move left"
+                />
+              </button>
+              <button class="btn btn__outlined-primary featured-house__btn featured-house__btn-right">
+                <img class="featured-house__arrow" src="./assets/icons/arrow-r-primary.svg" alt="Move right" />
+              </button>
+            </div>
+          </header>
+          <div class="featured-house__cards-container">
+            <section class="featured-house__cards u-grab">
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house2.png" alt="House 1" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge featured-house__card-badge--danger">
+                    <img src="./assets/icons/fire.svg" alt="Popular" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">Popular</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">Roselands House</h3>
+                    <p class="card-price">$ 35.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/dianna.jpeg" alt="The picture of Dianna" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Dianne Russell</p>
+                      <p class="recommended__content--sub">Manchester, Kentucky</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house3.jpeg" alt="House 2" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge featured-house__card-badge--info">
+                    <img src="./assets/icons/house-info.svg" alt="New house" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">New house</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">Woodlandside</h3>
+                    <p class="card-price">$ 20.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/robert.jpeg" alt="Picture of Robert" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Robert Fox</p>
+                      <p class="recommended__content--sub">Dr. San Jose, South Dakota</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house4.jpeg" alt="House 3" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge">
+                    <img src="./assets/icons/wallet.svg" alt="Best deal" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">Best deal</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">The Old Lighthouse</h3>
+                    <p class="card-price">$ 44.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/ronald.jpeg" alt="Picture of Ronald" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Ronald Richards</p>
+                      <p class="recommended__content--sub">Santa Ana, Illinois</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house5.jpeg" alt="House 4" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge featured-house__card-badge--danger">
+                    <img src="./assets/icons/fire.svg" alt="Popular" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">Popular</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">Cosmo's House</h3>
+                    <p class="card-price">$ 22.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/jenny.jpeg" alt="Picture of Jenny" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Jenny Wilson</p>
+                      <p class="recommended__content--sub">Preston Rd. Inglewood, Maine 98380</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house2.png" alt="House 1" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge featured-house__card-badge--danger">
+                    <img src="./assets/icons/fire.svg" alt="Popular" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">Popular</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">Roselands House</h3>
+                    <p class="card-price">$ 35.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/dianna.jpeg" alt="Picture of Dianna" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Dianne Russell</p>
+                      <p class="recommended__content--sub">Manchester, Kentucky</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house3.jpeg" alt="House 2" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge featured-house__card-badge--info">
+                    <img src="./assets/icons/house-info.svg" alt="New house" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">New house</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">Woodlandside</h3>
+                    <p class="card-price">$ 20.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/robert.jpeg" alt="Picture of Robert" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Robert Fox</p>
+                      <p class="recommended__content--sub">Dr. San Jose, South Dakota</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house4.jpeg" alt="House 3" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge">
+                    <img src="./assets/icons/wallet.svg" alt="Best deal" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">Best deal</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">The Old Lighthouse</h3>
+                    <p class="card-price">$ 44.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/ronald.jpeg" alt="Picture of Ronald" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Ronald Richards</p>
+                      <p class="recommended__content--sub">Santa Ana, Illinois</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="featured-house__card">
+                <div class="featured-house__card-picture">
+                  <img src="./assets/houses/house5.jpeg" alt="House 4" class="featured-house__card-img" />
+                  <div class="featured-house__card-badge featured-house__card-badge--danger">
+                    <img src="./assets/icons/fire.svg" alt="Popular" class="featured-house__card-badge-icon" />
+                    <p class="feature-house__card-badge-text">Popular</p>
+                  </div>
+                </div>
+                <div class="featured-house__card-content">
+                  <header class="card-header">
+                    <h3 class="card-heading">Cosmo's House</h3>
+                    <p class="card-price">$ 22.000.000</p>
+                  </header>
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/jenny.jpeg" alt="Picture of Jenny" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Jenny Wilson</p>
+                      <p class="recommended__content--sub">Preston Rd. Inglewood, Maine 98380</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="section-tour">
+        <div class="u-container">
+          <article class="tour">
+            <section class="tour__text-content">
+              <header class="section__header">
+                <div class="section__beginning">
+                  <img
+                    src="./assets/section-starter.svg"
+                    alt="A yellow line marking start of a new section"
+                    class="section__starter"
+                  />
+                  <h4 class="section__starter-heading">Ready to Sell!</h4>
+                  <h2 class="section__heading">Let’s tour and see our house!</h2>
+                </div>
+              </header>
+              <p class="body-text-grey-3">
+                Houses recommended by our partners that have been curated to become the home of your dreams!
+              </p>
+              <div class="tour__house-details">
+                <h5 class="tour__house-details-heading">House Detail</h5>
+                <div class="tour__house-details-details">
+                  <div class="tour__house-details-detail">
+                    <div class="tour__house-details-icon"></div>
+                    <p class="tour__house-details-label">4 Bedrooms</p>
+                  </div>
+                  <div class="tour__house-details-detail">
+                    <div class="tour__house-details-icon"></div>
+                    <p class="tour__house-details-label">2 Bathrooms</p>
+                  </div>
+                  <div class="tour__house-details-detail">
+                    <div class="tour__house-details-icon"></div>
+                    <p class="tour__house-details-label">1 Garage</p>
+                  </div>
+                  <div class="tour__house-details-detail">
+                    <div class="tour__house-details-icon"></div>
+                    <p class="tour__house-details-label">2 Floors</p>
+                  </div>
+                </div>
+                <div class="tour__contact">
+                  <div class="featured-house__agent">
+                    <img class="recommended__picture" src="./assets/people/dianna.jpeg" alt="Picture of Dianna" />
+                    <div class="recommended__content">
+                      <p class="recommended__content--main">Dianne Russell</p>
+                      <p class="recommended__content--sub">Manchester, Kentucky</p>
+                    </div>
+                  </div>
+                  <button class="btn btn__filled--primary tour__contact-btn">
+                    <img src="./assets/icons/call.svg" alt="Phone call icon" class="tour__contact-icon" />
+                    <span class="tour__contact-btn-text">Contact now</span>
+                  </button>
+                </div>
+              </div>
+            </section>
+            <section class="tour__visuals">
+              <section class="furniture">
+                <img src="./assets/furniture/sofa.jpeg" class="furniture__sofa" alt="Picture of sofa" />
+                <div class="furniture__container">
+                  <img src="./assets/furniture/vase.jpeg" class="furniture__piece" alt="Picture of vase" />
+                  <img src="./assets/furniture/armchair.jpeg" class="furniture__piece" alt="Picture of armchair" />
+                </div>
+              </section>
+              <section class="tour__video-container">
+                <iframe
+                  class="tour__video"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=ir6Y6_V6H1moFBaC"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                  allowfullscreen
+                ></iframe>
+                <div class="tour__video-overlay">
+                  <img src="./assets/Play.png" alt="Play video button" class="tour__video-play" />
+                </div>
+              </section>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

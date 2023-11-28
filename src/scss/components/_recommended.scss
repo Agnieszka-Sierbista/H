@@ -1,0 +1,127 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.recommended {
+  width: 72rem;
+  align-self: flex-end;
+  position: relative;
+  clip-path: polygon(0 0, 200% 0, 200% 200%, 0% 200%);
+
+  @include mixins.respond-to(x-large) {
+    position: absolute;
+    right: 0;
+  }
+
+  &__arrows {
+    display: none;
+  }
+
+  &__arrow-container {
+    width: 10rem;
+    filter: opacity(0);
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgba(variables.$color-white, 0.2);
+      filter: opacity(1);
+
+      img {
+        height: 7rem;
+        filter: brightness(0) saturate(100%) invert(90%) sepia(27%) saturate(168%) hue-rotate(96deg) brightness(96%) contrast(109%);
+      }
+    }
+  }
+
+  &__carousel {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$size-m;
+    align-items: center;
+    padding: variables.$size-m;
+    transition: transform 0.3s ease-in-out;
+
+    @include mixins.respond-to(small) {
+      gap: variables.$size-xs;
+    }
+
+    @include mixins.respond-to(large) {
+      flex-direction: row;
+      align-items: initial;
+      padding: 0;
+    }
+
+    @include mixins.respond-to(x-large) {
+      padding: 7.4rem variables.$size-l;
+    }
+  }
+
+  &__item {
+    background-color: variables.$color-white;
+    padding: variables.$size-s;
+    display: flex;
+    flex-direction: column;
+    border-radius: variables.$size-m;
+    min-width: 25rem;
+    min-height: 10rem;
+    border: 5px solid variables.$color-primary;
+    outline: 2px solid variables.$color-white;
+    outline-offset: -3px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
+
+    @include mixins.respond-to(small) {
+      flex-direction: row;
+      width: max-content;
+      height: initial;
+      gap: variables.$size-xs;
+    }
+
+    @include mixins.respond-to(x-large) {
+      border: none;
+      outline: none;
+    }
+  }
+
+  &__pictures {
+    align-self: center;
+    display: flex;
+
+    @include mixins.respond-to(small) {
+      align-self: initial;
+    }
+  }
+
+  &__picture {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 3px solid variables.$color-white;
+
+    &:not(:last-child) {
+      margin-right: -2rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+
+    @include mixins.respond-to(x-large) {
+      align-items: flex-start;
+    }
+
+    &--main {
+      color: variables.$color-black;
+      font-size: variables.$size-xs;
+      font-weight: bold;
+    }
+
+    &--sub {
+      color: variables.$color-grey-2;
+      font-size: variables.$size-xxs;
+    }
+  }
+}

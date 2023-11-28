@@ -1,0 +1,47 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+body {
+  color: variables.$color-black;
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.4rem;
+}
+
+.heading-primary {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: capitalize;
+
+  &--green {
+    color: variables.$color-primary;
+  }
+}
+
+.body-text-grey-3 {
+  font-size: variables.$size-xs;
+  font-weight: 300;
+  color: variables.$color-grey-2;
+  line-height: variables.$size-s;
+  align-self: center;
+
+  @include mixins.respond-to(small) {
+    align-self: initial;
+  }
+}
+
+.card-header {
+  margin: variables.$size-xxs 0;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.card-heading {
+  margin: variables.$size-tiny 0;
+  font-size: variables.$size-s;
+  color: variables.$color-black;
+}
+
+.card-price {
+  font-size: 2rem;
+  color: variables.$color-grey-3;
+}

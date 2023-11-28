@@ -1,0 +1,23 @@
+@use "../abstracts/variables";
+
+//RWD breakpoints
+@mixin respond-to($breakpoint) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    @media (min-width: map-get(variables.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+//coloring hack
+@mixin color-svg($color, $url) {
+  background-color: $color;
+  -webkit-mask-image: url($url);
+  mask-image: url($url);
+}
+
+//flex centered
+@mixin centered-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

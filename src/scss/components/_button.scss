@@ -1,0 +1,71 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.btn {
+  border-radius: variables.$border-radius-round;
+  padding: variables.$size-xxs variables.$size-s;
+
+  &:hover {
+    background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+  }
+
+  &__outlined {
+    border: 1px solid variables.$color-primary-dark;
+    color: variables.$color-primary-dark;
+
+    &--white {
+      background-color: variables.$color-white;
+    }
+
+    &--light {
+      background-color: variables.$color-primary-light;
+      color: variables.$color-primary;
+    }
+  }
+
+&__outlined-primary {
+  border: 1px solid variables.$color-primary;
+  color: variables.$color-primary;
+}
+
+  &__filled {
+    &--primary {
+      background-color: variables.$color-primary;
+      color: variables.$color-white;
+    }
+
+    &--dark {
+      background-color: variables.$color-primary-dark;
+    }
+
+    &--light {
+      background-color: variables.$color-primary-light;
+    }
+  }
+}
+
+.btn-menu {
+  width: 100%;
+  border-radius: variables.$border-radius-round;
+  padding: variables.$size-tiny variables.$size-s;
+  border: 1px solid variables.$color-white;
+  color: variables.$color-white;
+  display: flex;
+  gap: variables.$size-tiny;
+  font-size: 1.4rem;
+
+  &:hover {
+    background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+  }
+
+  @include mixins.respond-to(small) {
+    border: 1px solid variables.$color-primary-dark;
+    color: variables.$color-primary-dark;
+  }
+
+  @include mixins.respond-to(x-large) {
+    border-color: variables.$color-white;
+    color: variables.$color-white;
+    background-color: rgba(variables.$color-white, 0.1);
+  }
+}

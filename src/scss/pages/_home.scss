@@ -1,0 +1,27 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.section-hero {
+  padding-top: variables.$size-s;
+  background: url("../assets/Blur-BG.png") top/cover no-repeat;
+  position: relative;
+
+  @include mixins.respond-to(large) {
+    padding-top: variables.$size-m;
+  }
+
+  @include mixins.respond-to(x-large) {
+    padding-top: variables.$size-xl;
+  }
+  @include mixins.respond-to(x-large) {
+    padding-top: variables.$size-xl;
+    background: url("../assets/hero-joined.png") top right no-repeat, url("../assets/Blur-BG.png") top left no-repeat;
+    overflow: hidden;
+  }
+
+}
+
+.section-featured-house {
+  overflow: hidden;
+
+}
