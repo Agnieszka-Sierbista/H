@@ -41,14 +41,14 @@ function animateCarousel() {
 function toggleAnimatingCarousel(event, intervalID) {
   const currentItem = event.target.closest(".recommended__item");
   const items = Array.from(document.querySelectorAll(".recommended__item"));
-  const shouldShowcaseItem = !currentItem.classList.contains("u-scale");
+  const shouldShowcaseItem = !currentItem.classList.contains("u-scale", "u-shadow");
 
-  items.forEach((cardItem) => cardItem.classList.remove("u-scale"));
+  items.forEach((cardItem) => cardItem.classList.remove("u-scale", "u-shadow"));
   state.carousel.shouldBlockClicks = shouldShowcaseItem;
   clearInterval(intervalID);
 
   if (shouldShowcaseItem) {
-    event.target.closest(".recommended__item").classList.add("u-scale");
+    event.target.closest(".recommended__item").classList.add("u-scale", "u-shadow");
   } else {
     state.carousel.animateCarouselInterval = animateCarousel();
   }

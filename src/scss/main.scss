@@ -1,6 +1,5 @@
 @use "base/base";
 @use "base/typography";
-@use "base/utilites";
 @use "base/animations";
 
 @use "layout/section";
@@ -14,3 +13,5 @@
 @use "components/search-form";
 @use "components/featured-house";
 @use "components/tour";
+
+@use "base/utilites";

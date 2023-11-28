@@ -31,7 +31,10 @@
 
 .u-scale {
   transform: scale(1.2);
-  box-shadow: 16px 24px 52px -8px rgba(0, 0, 0, 0.15);;
+}
+
+.u-shadow {
+  box-shadow: 16px 24px 52px -8px rgba(0, 0, 0, 0.15);
 }
 
 .u-grab {
@@ -40,4 +43,12 @@
 
 .u-grabbing {
   cursor: grabbing;
+}
+
+.u-spaced {
+  margin: 4vh 0;
+
+  @include mixins.respond-to(small) {
+    margin: 8vh 0;
+  }
 }

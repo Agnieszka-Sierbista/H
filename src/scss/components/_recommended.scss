@@ -28,7 +28,7 @@
 
       img {
         height: 7rem;
-        filter: brightness(0) saturate(100%) invert(90%) sepia(27%) saturate(168%) hue-rotate(96deg) brightness(96%) contrast(109%);
+        filter: variables.$green-primary-light-filter;
       }
     }
   }

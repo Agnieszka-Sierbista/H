@@ -16,3 +16,6 @@ export const slider = document.querySelector(".featured-house__cards");
 export const sliderLeftArrow = document.querySelector(".featured-house__btn-left");
 export const sliderRightArrow = document.querySelector(".featured-house__btn-right");
 export const videoOverlay = document.querySelector(".tour__video-overlay");
+export const videoContainer = document.querySelector(".tour__video-container");
+export const furnitureContainer = document.querySelector(".furniture__container");
+export const sofa = document.querySelector(".furniture__sofa");
