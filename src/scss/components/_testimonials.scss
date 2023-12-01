@@ -1,0 +1,128 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    @include mixins.respond-to(medium) {
+      flex-direction: row;
+      cursor: grab;
+      transition: transform 0.3s linear;
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    grid-template-rows: 1fr 1fr 2rem;
+
+    @include mixins.respond-to(small) {
+      grid-template-columns: 4rem 1fr 4rem;
+      grid-template-rows: 45% 1fr 4rem;
+    }
+
+    @include mixins.respond-to(medium) {
+      min-width: 600px;
+      max-width: 400px;
+      min-height: 420px;
+      user-select: none;
+      flex-wrap: nowrap;
+      overflow: visible;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 1em;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      grid-template-columns: 6rem 1fr 6rem;
+      grid-template-rows: 35% 1fr 6rem;
+
+    }
+
+    @include mixins.respond-to(x-large) {
+      grid-template-columns: 8.6rem 1fr 8.6rem;
+      grid-template-rows: 55% 1fr 7.6rem;
+      min-width: 800px;
+      max-width: 1000px;
+      min-height: 580px;
+
+    }
+  }
+
+  &__img {
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: 0.8rem;
+    //moblie-fit
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  background-color: variables.$color-white;
+  border-radius: 1.6rem;
+  padding: 3.2rem;
+  box-shadow: 0px 8px 32px 0px rgba(12, 21, 55, 0.09);
+
+  &__heading {
+    margin: 0 0 1.6rem 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    @include mixins.respond-to(small) {
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    color: variables.$color-grey-3;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    @include mixins.respond-to(small) {
+      flex-direction: row;
+    }
+  }
+
+  &__rating-star {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}

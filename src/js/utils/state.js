@@ -14,4 +14,13 @@ export const state = {
     widthsSlider: [],
     canMoveRight: true,
   },
+  grabbableSlider: {
+    clientX: null,
+    grabbing: false,
+    prevDistanceScrolled: null,
+    distanceToScroll: 0,
+    scrollWidth: 0,
+    offsetWidth: 0,
+    maxDistance: null,
+  },
 };

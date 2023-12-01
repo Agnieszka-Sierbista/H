@@ -1,5 +1,6 @@
-import { smallDevicesBreakpoint, smallDeviceWidth } from "../utils/breakpoints.js";
+import { smallDevicesBreakpoint } from "../utils/breakpoints.js";
 import { input } from "../utils/selectors.js";
+import { smallDeviceWidth } from "../utils/constants.js";
 
 export function initializeInputPlaceholderToggler() {
   window.addEventListener("load", toggleInputPlaceholder);

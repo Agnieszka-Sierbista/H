@@ -19,3 +19,7 @@ export const videoOverlay = document.querySelector(".tour__video-overlay");
 export const videoContainer = document.querySelector(".tour__video-container");
 export const furnitureContainer = document.querySelector(".furniture__container");
 export const sofa = document.querySelector(".furniture__sofa");
+export const testimonialsSlider = document.querySelector(".testimonials__container");
+export const switchButton = document.querySelector("#switchButton");
+export const miniContainer = document.querySelector(".find-more__mini");
+export const maxiContainer = document.querySelector(".find-more__maxi");
