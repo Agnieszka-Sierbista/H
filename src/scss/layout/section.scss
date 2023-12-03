@@ -85,6 +85,11 @@
     @include mixins.respond-to(small) {
       margin: 0;
     }
+
+    &--centered {
+      @include mixins.centered-flex;
+      text-align: center;
+    }
   }
 
   &__starter-heading {

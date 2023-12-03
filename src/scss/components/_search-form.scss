@@ -24,6 +24,10 @@
       padding: variables.$size-s variables.$size-s variables.$size-s 5.6rem;
       background-position: variables.$size-s;
     }
+
+    &--subscribe {
+      background: variables.$color-white url('../assets/icons/mail-blue.svg') variables.$size-xxs no-repeat;
+    }
   }
 
   &__label {

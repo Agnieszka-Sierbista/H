@@ -8,6 +8,7 @@
     }
   }
 }
+
 //coloring hack
 @mixin color-svg($color, $url) {
   background-color: $color;
@@ -20,4 +21,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+//grid assingment inputs
+@mixin set-grid-inputs($index) {
+  input.form__input:nth-of-type(#{$index}) {
+    grid-row-start: #{$index};
+    grid-row-end: #{$index + 1};
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+}
+
+//grid assingment labels
+@mixin set-grid-labels($index) {
+  label.form__label:nth-of-type(#{$index}) {
+    grid-row-start: #{$index};
+    grid-row-end: #{$index + 1};
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 }

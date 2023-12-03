@@ -1,4 +1,5 @@
 export const state = {
+  isCookieAccepted: false,
   isMenuOpened: false,
   carousel: {
     widths: [],
@@ -22,5 +23,8 @@ export const state = {
     scrollWidth: 0,
     offsetWidth: 0,
     maxDistance: null,
+  },
+  form: {
+    isDropdownExpanded: false,
   },
 };
